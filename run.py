@@ -45,8 +45,8 @@ input()
 clear()
 
 
-string = f"- The Year is 2021...\n\n- FictionalCorp have hired you as their new CEO\
-\n- You have been tasked with improving their performance on three fronts\n\
+intro = f"- The Year is 2021...\n- FictionalCorp have hired you as their new CEO\
+\n- You have been tasked with improving their performance on three fronts:\n\
     \n1. Shareholder Sentiment\
     \n2. Customer Confidence\
     \n3. Employee Engagement\n\
@@ -63,12 +63,12 @@ shareholders = "Shareholders:      😐"
 customers = "Customers:         😐"
 employees = "Employees:         😐"
 
-for letter in string:
+for letter in intro:
     sleep(0.001) 
     sys.stdout.write(letter)
     sys.stdout.flush()
 
-string1 = f"------------------------------------------------------------\n\
+dashboard_0 = f"\n------------------------------------------------------------\n\
 Financial Projections:     |     Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
 Revenue:   €{revenue}       |      {shareholders}     \n\
@@ -76,8 +76,8 @@ Expenses:  €{expenses}        |      {customers}     \n\
 Profits:   €{profits}        |      {employees}     \n\
 ------------------------------------------------------------\n"
 
-for letter in string1:
-    sleep(0.0035) 
+for letter in dashboard_0:
+    sleep(0.001) 
     sys.stdout.write(letter)
     sys.stdout.flush()
 
@@ -85,47 +85,110 @@ input("\n[Press Enter To Begin]")
 
 clear()
 
-for letter in string1:
+for letter in dashboard_0:
     sleep(0.001) 
     sys.stdout.write(letter)
     sys.stdout.flush()
 
-string2 = "\nScenario 1: You must decide at what level the selling price for \n\
+scenario_1 = "\nScenario 1: You must decide at what level the selling price for \n\
 FictonalCorp's leading product should be set for the coming year:\n\
 \n    A. Increase Current Selling Price\n\
     B. Maintain Current Selling Price \n\
     C. Reduce Current Selling Price\n"
 
-for letter in string2:
-    sleep(0.02) 
+for letter in scenario_1:
+    sleep(0.001) 
     sys.stdout.write(letter)
     sys.stdout.flush()
 
-answer1 = input("\nPlease Select an option - A, B or C: ").upper()
+while True:
+    input1 = input("\nPlease Select an option - A, B or C: ").upper()
+    if input1.upper() not in ('A', 'B', 'C'):
+        print("Please Enter A Valid Choice - A, B or C")
+    else:
+        break
 
-string3 = "You have chosen Option A\n - Increasing Selling Prices by ~5% has resulted in a decrease in projected\n\
-units sold, with customers choosing competitor alternatives,\n\
-overall Revenue projections have declined\n"
-string4 = "You have chosen Option B\n - Revenue is unchanged\n"
-string5 = "You have chosen Option C\n - Revenue has increased\n"
+# answer1 = input("\nPlease Select an option - A, B or C: ").upper()
 
-if answer1 == "A":
-    clear()
-    print(revenue)
+
+
+scenario_1_answer_1 = "\nYou have chosen Option A\n \n- Increasing Selling Prices by ~5% has resulted in a decrease in projected\n\
+units sold, with customers choosing competitor alternatives\n\
+- Unfortunately overall Revenue projections have declined\n\
+- With expenses unchanged, profit projections have fallen as a result\n"
+scenario_1_answer_2 = "\nYou have chosen Option B\n \n- Maintaining Current Selling Prices has resulted in no change to projected\n\
+units sold\n\
+- Overall Revenue projections are unchanged\n\
+- With expenses flat, profit projections have remained static as a result\n"
+scenario_1_answer_3 = "\nYou have chosen Option C\n \n- Reducing Selling Prices by ~5% has resulted in an increase in projected\n\
+units sold, with several new customers interested\n\
+- Overall Revenue projections have increased as a result\n\
+- With expenses unchanged, profit projections have increased\n"
+
+
+if input1 == "A":
     revenue = 950000
-    print(revenue)
-    for letter in string1:
-        sleep(0.0035) 
+    profits = revenue - expenses
+    shareholders = "Shareholders:      🙁"
+    customers = "Customers:         😐"
+    employees = "Employees:         😐"
+    dashboard_1 = f"\n------------------------------------------------------------\n\
+Financial Projections:       |     Stakeholder Sentiment :  \n\
+------------------------------------------------------------\n\
+Revenue:  €{revenue} (-€50000)  |      {shareholders} {(-1)}  \n\
+Expenses: €{expenses}            |      {customers}     \n\
+Profits:  €{profits} (-€50000)  |      {employees}     \n\
+------------------------------------------------------------\n\
+                                            Total Points: -1\n"
+    clear()
+    for letter in scenario_1_answer_1:
+        sleep(0.01) 
         sys.stdout.write(letter)
         sys.stdout.flush()
-    for letter in string3:
-        sleep(0.02) 
+    for letter in dashboard_1:
+        sleep(0.0001) 
         sys.stdout.write(letter)
         sys.stdout.flush()
-    
+    input("\nPress Enter To Proceed to Next Scenario")
 
-elif answer1 == C:
-    revenue = revenue * 1.05
+elif input1 == "B":
+    clear()
+    for letter in scenario_1_answer_2:
+        sleep(0.0001) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    for letter in dashboard_0:
+        sleep(0.001) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    input("\nPress Enter To Proceed to Next Scenario")
+
+elif input1 == "C":
+    revenue = 1050000
+    profits = revenue - expenses
+    shareholders = "Shareholders:      🙂"
+    customers = "Customers:         😐"
+    employees = "Employees:         😐"
+    dashboard_2 = f"\n------------------------------------------------------------\n\
+Financial Projections:       |     Stakeholder Sentiment :  \n\
+------------------------------------------------------------\n\
+Revenue:  €{revenue} (+€50000) |      {shareholders} (+1)  \n\
+Expenses: €{expenses}            |      {customers}     \n\
+Profits:  €{profits} (+€50000)  |      {employees}     \n\
+------------------------------------------------------------\n\
+                                            Total Points: +1"
+    clear()
+    for letter in scenario_1_answer_3:
+        sleep(0.0001) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    for letter in dashboard_2:
+        sleep(0.001) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    input("\nPress Enter To Proceed to Next Scenario\n")
+
+
     
 
 # sleep(0.5)
