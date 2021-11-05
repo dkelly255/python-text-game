@@ -108,10 +108,6 @@ while True:
     else:
         break
 
-# answer1 = input("\nPlease Select an option - A, B or C: ").upper()
-
-
-
 scenario_1_answer_1 = "\nYou have chosen Option A\n \n- Increasing Selling Prices by ~5% has resulted in a decrease in projected\n\
 units sold, with customers choosing competitor alternatives\n\
 - Unfortunately overall Revenue projections have declined\n\
@@ -132,7 +128,7 @@ if input1 == "A":
     shareholders = "Shareholders:      🙁"
     customers = "Customers:         😐"
     employees = "Employees:         😐"
-    dashboard_1 = f"\n------------------------------------------------------------\n\
+    dashboard_0 = f"\n------------------------------------------------------------\n\
 Financial Projections:       |     Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
 Revenue:  €{revenue} (-€50000)  |      {shareholders} {(-1)}  \n\
@@ -145,7 +141,7 @@ Profits:  €{profits} (-€50000)  |      {employees}     \n\
         sleep(0.01) 
         sys.stdout.write(letter)
         sys.stdout.flush()
-    for letter in dashboard_1:
+    for letter in dashboard_0:
         sleep(0.0001) 
         sys.stdout.write(letter)
         sys.stdout.flush()
@@ -169,23 +165,125 @@ elif input1 == "C":
     shareholders = "Shareholders:      🙂"
     customers = "Customers:         😐"
     employees = "Employees:         😐"
-    dashboard_2 = f"\n------------------------------------------------------------\n\
+    dashboard_0 = f"\n------------------------------------------------------------\n\
 Financial Projections:       |     Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
 Revenue:  €{revenue} (+€50000) |      {shareholders} (+1)  \n\
 Expenses: €{expenses}            |      {customers}     \n\
-Profits:  €{profits} (+€50000)  |      {employees}     \n\
+Profits:  €{profits}  (+€50000) |      {employees}     \n\
 ------------------------------------------------------------\n\
-                                            Total Points: +1"
+                                            Total Points: +1\n"
     clear()
     for letter in scenario_1_answer_3:
         sleep(0.0001) 
         sys.stdout.write(letter)
         sys.stdout.flush()
-    for letter in dashboard_2:
+    for letter in dashboard_0:
         sleep(0.001) 
         sys.stdout.write(letter)
         sys.stdout.flush()
     input("\nPress Enter To Proceed to Next Scenario\n")
 
+
+
+
+clear()
+for letter in dashboard_0:
+    sleep(0.001) 
+    sys.stdout.write(letter)
+    sys.stdout.flush()
+
+scenario_2 = "\nScenario 2: You must decide at what level the marketing budget \n\
+should be set for the coming year:\n\
+\n    A. Increase Marketing Expenditure \n\
+    B. Maintain Marketing Expenditure \n\
+    C. Decrease Marketing Expenditure \n"
+
+for letter in scenario_2:
+    sleep(0.001) 
+    sys.stdout.write(letter)
+    sys.stdout.flush()
+
+while True:
+    input2 = input("\nPlease Select an option - A, B or C: ").upper()
+    if input2.upper() not in ('A', 'B', 'C'):
+        print("Please Enter A Valid Choice - A, B or C")
+    else:
+        break
+
+scenario_2_answer_1 = "\nYou have chosen Option A\n \n- Increasing the Marketing Budget by ~5% has resulted in an increase in projected\n\
+units sold, with increasing customer interest\n\
+- Yearly Revenue projection increases run ahead of equivalent expenditure increase projections\n\
+- Profit projections have increased as a result\n"
+scenario_2_answer_2 = "\nYou have chosen Option B\n \n- Retaining current marketing expenditure levels has resulted in flat projected\n\
+unit sales\n\
+- Yearly Revenue projections remain unchanged as a result\n\
+- With expenditure forecasts unchanged, Profit projections remained static\n"
+scenario_2_answer_3 = "\nYou have chosen Option C\n \n- Decreasing the Marketing Budget by ~5% has resulted in an decrease in projected\n\
+units sold, with cusotmers choosing competitor alternatives\n\
+- Yearly Revenue projection decreases are exceeding the equivalent reductions in expenditure projections\n\
+- Profit projections have decreased as a result\n"
+
+
+if input2 == "A":
+    revenue1 = revenue + 100000
+    profits = revenue - expenses
+    shareholders = "Shareholders:      🙁"
+    customers = "Customers:         😐"
+    employees = "Employees:         😐"
+    dashboard_0 = f"\n------------------------------------------------------------\n\
+Financial Projections:       |     Stakeholder Sentiment :  \n\
+------------------------------------------------------------\n\
+Revenue:  €{revenue1} (-€50000)  |      {shareholders} {(-1)}  \n\
+Expenses: €{expenses}            |      {customers}     \n\
+Profits:  €{profits} (-€50000)  |      {employees}     \n\
+------------------------------------------------------------\n\
+                                            Total Points: -1\n"
+    clear()
+    for letter in scenario_2_answer_1:
+        sleep(0.01) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    for letter in dashboard_0:
+        sleep(0.0001) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    input("\nPress Enter To Proceed to Next Scenario")
+
+elif input2 == "B":
+    clear()
+    for letter in scenario_2_answer_2:
+        sleep(0.0001) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    for letter in dashboard_0:
+        sleep(0.001) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    input("\nPress Enter To Proceed to Next Scenario")
+
+elif input2 == "C":
+    revenue = 1050000
+    profits = revenue - expenses
+    shareholders = "Shareholders:      🙂"
+    customers = "Customers:         😐"
+    employees = "Employees:         😐"
+    dashboard_0 = f"\n------------------------------------------------------------\n\
+Financial Projections:       |     Stakeholder Sentiment :  \n\
+------------------------------------------------------------\n\
+Revenue:  €{revenue} (+€50000) |      {shareholders} (+1)  \n\
+Expenses: €{expenses}            |      {customers}     \n\
+Profits:  €{profits}  (+€50000) |      {employees}     \n\
+------------------------------------------------------------\n\
+                                            Total Points: +1\n"
+    clear()
+    for letter in scenario_2_answer_3:
+        sleep(0.0001) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    for letter in dashboard_0:
+        sleep(0.001) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    input("\nPress Enter To Proceed to Next Scenario\n")
 
