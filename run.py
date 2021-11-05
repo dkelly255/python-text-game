@@ -59,22 +59,25 @@ string = f"- The Year is 2021...\n\n- FictionalCorp have hired you as their new 
 revenue = 1000000
 expenses = 700000
 profits = revenue - expenses
+shareholders = "Shareholders:      😐"
+customers = "Customers:         😐"
+employees = "Employees:         😐"
 
 for letter in string:
-    sleep(0.001) # In seconds
+    sleep(0.001) 
     sys.stdout.write(letter)
     sys.stdout.flush()
 
 string1 = f"------------------------------------------------------------\n\
 Financial Projections:     |     Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue}       |      Shareholders:      😐     \n\
-Expenses:  €{expenses}        |      Customers:         😐     \n\
-Profits:   €{profits}        |      Employees:         😐     \n\
+Revenue:   €{revenue}       |      {shareholders}     \n\
+Expenses:  €{expenses}        |      {customers}     \n\
+Profits:   €{profits}        |      {employees}     \n\
 ------------------------------------------------------------\n"
 
 for letter in string1:
-    sleep(0.0035) # In seconds
+    sleep(0.0035) 
     sys.stdout.write(letter)
     sys.stdout.flush()
 
@@ -83,7 +86,7 @@ input("\n[Press Enter To Begin]")
 clear()
 
 for letter in string1:
-    sleep(0.001) # In seconds
+    sleep(0.001) 
     sys.stdout.write(letter)
     sys.stdout.flush()
 
@@ -100,16 +103,26 @@ for letter in string2:
 
 answer1 = input("\nPlease Select an option - A, B or C: ").upper()
 
-string3 = "You have chosen Option A\n - Revenue has declined\n"
+string3 = "You have chosen Option A\n - Increasing Selling Prices by ~5% has resulted in a decrease in projected\n\
+units sold, with customers choosing competitor alternatives,\n\
+overall Revenue projections have declined\n"
 string4 = "You have chosen Option B\n - Revenue is unchanged\n"
 string5 = "You have chosen Option C\n - Revenue has increased\n"
 
 if answer1 == "A":
+    clear()
+    print(revenue)
+    revenue = 950000
+    print(revenue)
+    for letter in string1:
+        sleep(0.0035) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
     for letter in string3:
         sleep(0.02) 
         sys.stdout.write(letter)
         sys.stdout.flush()
-    revenue = revenue * 0.95
+    
 
 elif answer1 == C:
     revenue = revenue * 1.05
