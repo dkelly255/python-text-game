@@ -45,17 +45,81 @@ input()
 clear()
 
 
-string = "- The Year is 2021...\n- FictionalCorp have hired you as their new CEO\
-\n- You have been tasked with improving their performance on three fronts\
-    \nin the coming financial year\
-    \n- You will receive one point for each improvement in stakeholder sentiment\
-    \n- You will lose one point for each decline in stakeholder sentiment\
+string = f"- The Year is 2021...\n\n- FictionalCorp have hired you as their new CEO\
+\n- You have been tasked with improving their performance on three fronts\n\
+    \n1. Shareholder Sentiment\
+    \n2. Customer Confidence\
+    \n3. Employee Engagement\n\
+    \n- You will receive one point for each improvement in stakeholder status\
+    \n- You will lose one point for each decline in stakeholder status\n\
     \n- Navigate the following series of business decisions, and their respective\
-    \nstakeholder impacts\n" 
+    \nstakeholder impacts\n\
+    \n- Your performance will be displayed on a dashboard in the format below:\n" 
+
+revenue = 1000000
+expenses = 700000
+profits = revenue - expenses
 
 for letter in string:
-  sleep(0.02) # In seconds
-  sys.stdout.write(letter)
-  sys.stdout.flush()
+    sleep(0.001) # In seconds
+    sys.stdout.write(letter)
+    sys.stdout.flush()
+
+string1 = f"------------------------------------------------------------\n\
+Financial Projections:     |     Stakeholder Sentiment :  \n\
+------------------------------------------------------------\n\
+Revenue:   €{revenue}       |      Shareholders:      😐     \n\
+Expenses:  €{expenses}        |      Customers:         😐     \n\
+Profits:   €{profits}        |      Employees:         😐     \n\
+------------------------------------------------------------\n"
+
+for letter in string1:
+    sleep(0.0035) # In seconds
+    sys.stdout.write(letter)
+    sys.stdout.flush()
 
 input("\n[Press Enter To Begin]")
+
+clear()
+
+for letter in string1:
+    sleep(0.001) # In seconds
+    sys.stdout.write(letter)
+    sys.stdout.flush()
+
+string2 = "\nScenario 1: You must decide at what level the selling price for \n\
+FictonalCorp's leading product should be set for the coming year:\n\
+\n    A. Increase Current Selling Price\n\
+    B. Maintain Current Selling Price \n\
+    C. Reduce Current Selling Price\n"
+
+for letter in string2:
+    sleep(0.02) 
+    sys.stdout.write(letter)
+    sys.stdout.flush()
+
+answer1 = input("\nPlease Select an option - A, B or C: ").upper()
+
+string3 = "You have chosen Option A\n - Revenue has declined\n"
+string4 = "You have chosen Option B\n - Revenue is unchanged\n"
+string5 = "You have chosen Option C\n - Revenue has increased\n"
+
+if answer1 == "A":
+    for letter in string3:
+        sleep(0.02) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+    revenue = revenue * 0.95
+
+elif answer1 == C:
+    revenue = revenue * 1.05
+    
+
+# sleep(0.5)
+# print("------------------------------------------------------------")
+# print("Financial Projections:     |       Stakeholder Satisfaction:")
+# print("------------------------------------------------------------")
+# print("Revenue: €1,000,000        |    Shareholders:         😐    ")
+# print("Expenses:  €700,000        |    Customers:            😐    ")
+# print("Profits:   €300,000        |    Employees:            😐    ")
+
