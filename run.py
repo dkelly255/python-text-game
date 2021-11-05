@@ -189,13 +189,3 @@ Profits:  €{profits} (+€50000)  |      {employees}     \n\
     input("\nPress Enter To Proceed to Next Scenario\n")
 
 
-    
-
-# sleep(0.5)
-# print("------------------------------------------------------------")
-# print("Financial Projections:     |       Stakeholder Satisfaction:")
-# print("------------------------------------------------------------")
-# print("Revenue: €1,000,000        |    Shareholders:         😐    ")
-# print("Expenses:  €700,000        |    Customers:            😐    ")
-# print("Profits:   €300,000        |    Employees:            😐    ")
-
