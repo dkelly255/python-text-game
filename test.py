@@ -39,8 +39,15 @@ def formatting_plug(a,b):
     """
     Plug spaces to visually align dashboard segregation on terminal display depending on length of variables
     """
-    plug = (len(str(a)) + len(str(b))) * "-"
+    plug = (14 - (len(str(a)) + len(str(b)))) * " "
     return plug
+
+def conclude_game(a,b,c):
+    total_points = a + b + c
+    return total_points
+    
+    
+
 
 revenue = 1000000
 revenue_delta = "     "
@@ -55,8 +62,6 @@ customer_delta = "  "
 employees = "Employees:         😐"
 employee_delta = "  "
 
-plug = formatting_plug(revenue, revenue_delta)
-print(plug)
 
 dashboard_0 = f"\n------------------------------------------------------------\n\
 Financial Projections:         |     Stakeholder Sentiment :  \n\
@@ -114,14 +119,17 @@ def question_1(revenue, revenue_delta, expenses, expense_delta, profits, profit_
         customer_delta1 = -1
         customers1 = "Customers:         " + emoji_assignment(customer_delta1)
         employee_delta1 = 0
-        employees1 = "Employees:         " + emoji_assignment(employee_delta1)        
+        employees1 = "Employees:         " + emoji_assignment(employee_delta1)       
+        revenue_plug = formatting_plug(revenue1, revenue_delta1) 
+        expense_plug = formatting_plug(expenses1, expense_delta1) 
+        profit_plug = formatting_plug(profits1, profit_delta1)
 
         dashboard_1 = f"\n------------------------------------------------------------\n\
-Financial Projections:     |    Stakeholder Sentiment :  \n\
+Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue1} €{revenue_delta1}  |   {shareholders1}  {shareholder_delta1}    \n\
-Expenses:  €{expenses1} €{expense_delta1}       |   {customers1}  {customer_delta1}    \n\
-Profits:   €{profits1} €{profit_delta1}  |   {employees1}  {employee_delta1}    \n\
+Revenue:   €{revenue1} €{revenue_delta1}{revenue_plug}|   {shareholders1}  {shareholder_delta1}    \n\
+Expenses:  €{expenses1} €{expense_delta1}{expense_plug}|   {customers1}  {customer_delta1}    \n\
+Profits:   €{profits1} €{profit_delta1}{profit_plug}|   {employees1}  {employee_delta1}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta1 + customer_delta1 + employee_delta1)}\n"
         clear()
@@ -145,13 +153,16 @@ Profits:   €{profits1} €{profit_delta1}  |   {employees1}  {employee_delta1}
         customers1 = "Customers:         " + emoji_assignment(customer_delta1)
         employee_delta1 = 0
         employees1 = "Employees:         " + emoji_assignment(employee_delta1)
+        revenue_plug = formatting_plug(revenue1, revenue_delta1) 
+        expense_plug = formatting_plug(expenses1, expense_delta1) 
+        profit_plug = formatting_plug(profits1, profit_delta1)
 
         dashboard_1 = f"\n------------------------------------------------------------\n\
-Financial Projections:     |    Stakeholder Sentiment :  \n\
+Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue1} €{revenue_delta1}     |    {shareholders1} {shareholder_delta1}    \n\
-Expenses:  €{expenses1} €{expense_delta1}      |    {customers1} {customer_delta1}    \n\
-Profits:   €{profits1} €{profit_delta1}      |    {employees1} {employee_delta1}    \n\
+Revenue:   €{revenue1} €{revenue_delta1}{revenue_plug}|   {shareholders1}  {shareholder_delta1}    \n\
+Expenses:  €{expenses1} €{expense_delta1}{expense_plug}|   {customers1}  {customer_delta1}    \n\
+Profits:   €{profits1} €{profit_delta1}{profit_plug}|   {employees1}  {employee_delta1}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta1 + customer_delta1 + employee_delta1)}\n"
         clear()
@@ -175,13 +186,16 @@ Profits:   €{profits1} €{profit_delta1}      |    {employees1} {employee_del
         customers1 = "Customers:         " + emoji_assignment(customer_delta1)
         employee_delta1 = 0
         employees1 = "Employees:         " + emoji_assignment(employee_delta1)
+        revenue_plug = formatting_plug(revenue1, revenue_delta1) 
+        expense_plug = formatting_plug(expenses1, expense_delta1) 
+        profit_plug = formatting_plug(profits1, profit_delta1)
 
         dashboard_1 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue1} €{revenue_delta1}  |   {shareholders1}  {shareholder_delta1}    \n\
-Expenses:  €{expenses1} €{expense_delta1}       |   {customers1}  {customer_delta1}    \n\
-Profits:   €{profits1} €{profit_delta1}   |   {employees1}  {employee_delta1}    \n\
+Revenue:   €{revenue1} €{revenue_delta1}{revenue_plug}|   {shareholders1}  {shareholder_delta1}    \n\
+Expenses:  €{expenses1} €{expense_delta1}{expense_plug}|   {customers1}  {customer_delta1}    \n\
+Profits:   €{profits1} €{profit_delta1}{profit_plug}|   {employees1}  {employee_delta1}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta1 + customer_delta1 + employee_delta1)}\n"
         clear()
@@ -239,14 +253,17 @@ def question_2(revenue1, revenue_delta1, expenses1, expense_delta1, profits1, pr
         customers2 = "Customers:         " + emoji_assignment(customer_delta2)
         employee_delta2 = 0
         employees2 = "Employees:         " + emoji_assignment(employee_delta2)
+        revenue_plug = formatting_plug(revenue2, revenue_delta2) 
+        expense_plug = formatting_plug(expenses2, expense_delta2) 
+        profit_plug = formatting_plug(profits2, profit_delta2)
         
 
         dashboard_2 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue2} €{revenue_delta2} |   {shareholders2}  {shareholder_delta2}    \n\
-Expenses:  €{expenses2} €{expense_delta2}   |   {customers2}  {customer_delta2}    \n\
-Profits:   €{profits2} €{profit_delta2}  |   {employees2}  {employee_delta2}    \n\
+Revenue:   €{revenue2} €{revenue_delta2}{revenue_plug}|   {shareholders2}  {shareholder_delta2}    \n\
+Expenses:  €{expenses2} €{expense_delta2}{expense_plug}|   {customers2}  {customer_delta2}    \n\
+Profits:   €{profits2} €{profit_delta2}{profit_plug}|   {employees2}  {employee_delta2}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta2 + customer_delta2 + employee_delta2)}\n"
         clear()
@@ -267,13 +284,17 @@ Profits:   €{profits2} €{profit_delta2}  |   {employees2}  {employee_delta2}
         customers2 = customers1
         employee_delta2 = 0
         employees2 = employees1        
+        revenue_plug = formatting_plug(revenue2, revenue_delta2) 
+        expense_plug = formatting_plug(expenses2, expense_delta2) 
+        profit_plug = formatting_plug(profits2, profit_delta2)
+        
 
         dashboard_2 = f"\n------------------------------------------------------------\n\
-Financial Projections:   |    Stakeholder Sentiment :  \n\
+Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue2} €{revenue_delta2}  |   {shareholders2}  {shareholder_delta2}    \n\
-Expenses:  €{expenses2} €{expense_delta2}  |   {customers2}  {customer_delta2}    \n\
-Profits:   €{profits2} €{profit_delta2}  |   {employees2}  {employee_delta2}    \n\
+Revenue:   €{revenue2} €{revenue_delta2}{revenue_plug}|   {shareholders2}  {shareholder_delta2}    \n\
+Expenses:  €{expenses2} €{expense_delta2}{expense_plug}|   {customers2}  {customer_delta2}    \n\
+Profits:   €{profits2} €{profit_delta2}{profit_plug}|   {employees2}  {employee_delta2}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta2 + customer_delta2 + employee_delta2)}\n"
         clear()
@@ -294,13 +315,16 @@ Profits:   €{profits2} €{profit_delta2}  |   {employees2}  {employee_delta2}
         customers2 = "Customers:         " + emoji_assignment(customer_delta2)
         employee_delta2 = 0
         employees2 = "Employees:         " + emoji_assignment(employee_delta2)        
+        revenue_plug = formatting_plug(revenue2, revenue_delta2) 
+        expense_plug = formatting_plug(expenses2, expense_delta2) 
+        profit_plug = formatting_plug(profits2, profit_delta2)        
 
         dashboard_2 = f"\n------------------------------------------------------------\n\
-Financial Projections:     |    Stakeholder Sentiment :  \n\
+Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue2} €{revenue_delta2} |   {shareholders2}  {shareholder_delta2}    \n\
-Expenses:  €{expenses2} €{expense_delta2}  |   {customers2}  {customer_delta2}    \n\
-Profits:   €{profits2} €{profit_delta2}     |   {employees2}  {employee_delta2}    \n\
+Revenue:   €{revenue2} €{revenue_delta2}{revenue_plug}|   {shareholders2}  {shareholder_delta2}    \n\
+Expenses:  €{expenses2} €{expense_delta2}{expense_plug}|   {customers2}  {customer_delta2}    \n\
+Profits:   €{profits2} €{profit_delta2}{profit_plug}|   {employees2}  {employee_delta2}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta2 + customer_delta2 + employee_delta2)}\n"
         clear()
@@ -355,14 +379,17 @@ def question_3(revenue2, revenue_delta2, expenses2, expense_delta2, profits2, pr
         customers3 = "Customers:         " + emoji_assignment(customer_delta3)
         employee_delta3 = employee_delta2 + 1
         employees3 = "Employees:         " + emoji_assignment(employee_delta3)
+        revenue_plug = formatting_plug(revenue3, revenue_delta3) 
+        expense_plug = formatting_plug(expenses3, expense_delta3) 
+        profit_plug = formatting_plug(profits3, profit_delta3)
         
 
         dashboard_3 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue3} €{revenue_delta3} |   {shareholders3}  {shareholder_delta3}    \n\
-Expenses:  €{expenses3} €{expense_delta3}   |   {customers3}  {customer_delta3}    \n\
-Profits:   €{profits3} €{profit_delta3}  |   {employees3}  {employee_delta3}    \n\
+Revenue:   €{revenue3} €{revenue_delta3}{revenue_plug}|   {shareholders3}  {shareholder_delta3}    \n\
+Expenses:  €{expenses3} €{expense_delta3}{expense_plug}|   {customers3}  {customer_delta3}    \n\
+Profits:   €{profits3} €{profit_delta3}{profit_plug}|   {employees3}  {employee_delta3}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta3 + customer_delta3 + employee_delta3)}\n"
         clear()
@@ -383,14 +410,17 @@ Profits:   €{profits3} €{profit_delta3}  |   {employees3}  {employee_delta3}
         customers3 = "Customers:         " + emoji_assignment(customer_delta3)
         employee_delta3 = employee_delta2 + 0
         employees3 = "Employees:         " + emoji_assignment(employee_delta3)
+        revenue_plug = formatting_plug(revenue3, revenue_delta3) 
+        expense_plug = formatting_plug(expenses3, expense_delta3) 
+        profit_plug = formatting_plug(profits3, profit_delta3)
         
 
         dashboard_3 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue3} €{revenue_delta3} |   {shareholders3}  {shareholder_delta3}    \n\
-Expenses:  €{expenses3} €{expense_delta3}   |   {customers3}  {customer_delta3}    \n\
-Profits:   €{profits3} €{profit_delta3}  |   {employees3}  {employee_delta3}    \n\
+Revenue:   €{revenue3} €{revenue_delta3}{revenue_plug}|   {shareholders3}  {shareholder_delta3}    \n\
+Expenses:  €{expenses3} €{expense_delta3}{expense_plug}|   {customers3}  {customer_delta3}    \n\
+Profits:   €{profits3} €{profit_delta3}{profit_plug}|   {employees3}  {employee_delta3}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta3 + customer_delta3 + employee_delta3)}\n"
         clear()
@@ -411,14 +441,17 @@ Profits:   €{profits3} €{profit_delta3}  |   {employees3}  {employee_delta3}
         customers3 = "Customers:         " + emoji_assignment(customer_delta3)
         employee_delta3 = employee_delta2 + 0
         employees3 = "Employees:         " + emoji_assignment(employee_delta3)
+        revenue_plug = formatting_plug(revenue3, revenue_delta3) 
+        expense_plug = formatting_plug(expenses3, expense_delta3) 
+        profit_plug = formatting_plug(profits3, profit_delta3)
         
 
         dashboard_3 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue3} €{revenue_delta3} |   {shareholders3}  {shareholder_delta3}    \n\
-Expenses:  €{expenses3} €{expense_delta3}   |   {customers3}  {customer_delta3}    \n\
-Profits:   €{profits3} €{profit_delta3}  |   {employees3}  {employee_delta3}    \n\
+Revenue:   €{revenue3} €{revenue_delta3}{revenue_plug}|   {shareholders3}  {shareholder_delta3}    \n\
+Expenses:  €{expenses3} €{expense_delta3}{expense_plug}|   {customers3}  {customer_delta3}    \n\
+Profits:   €{profits3} €{profit_delta3}{profit_plug}|   {employees3}  {employee_delta3}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta3 + customer_delta3 + employee_delta3)}\n"
         clear()
@@ -473,14 +506,17 @@ def question_4(revenue3, revenue_delta3, expenses3, expense_delta3, profits3, pr
         customers4 = "Customers:         " + emoji_assignment(customer_delta4)
         employee_delta4 = employee_delta3 + 1
         employees4 = "Employees:         " + emoji_assignment(employee_delta4)
+        revenue_plug = formatting_plug(revenue4, revenue_delta4) 
+        expense_plug = formatting_plug(expenses4, expense_delta4) 
+        profit_plug = formatting_plug(profits4, profit_delta4)
         
 
         dashboard_4 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue4} €{revenue_delta4} |   {shareholders4}  {shareholder_delta4}    \n\
-Expenses:  €{expenses4} €{expense_delta4}   |   {customers4}  {customer_delta4}    \n\
-Profits:   €{profits4} €{profit_delta4}  |   {employees4}  {employee_delta4}    \n\
+Revenue:   €{revenue4} €{revenue_delta4}{revenue_plug}|   {shareholders4}  {shareholder_delta4}    \n\
+Expenses:  €{expenses4} €{expense_delta4}{expense_plug}|   {customers4}  {customer_delta4}    \n\
+Profits:   €{profits4} €{profit_delta4}{profit_plug}|   {employees4}  {employee_delta4}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta4 + customer_delta4 + employee_delta4)}\n"
         clear()
@@ -501,14 +537,17 @@ Profits:   €{profits4} €{profit_delta4}  |   {employees4}  {employee_delta4}
         customers4 = "Customers:         " + emoji_assignment(customer_delta4)
         employee_delta4 = employee_delta3 + 0
         employees4 = "Employees:         " + emoji_assignment(employee_delta4)
+        revenue_plug = formatting_plug(revenue4, revenue_delta4) 
+        expense_plug = formatting_plug(expenses4, expense_delta4) 
+        profit_plug = formatting_plug(profits4, profit_delta4)
         
 
         dashboard_4 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue4} €{revenue_delta4} |   {shareholders4}  {shareholder_delta4}    \n\
-Expenses:  €{expenses4} €{expense_delta4}   |   {customers4}  {customer_delta4}    \n\
-Profits:   €{profits4} €{profit_delta4}  |   {employees4}  {employee_delta4}    \n\
+Revenue:   €{revenue4} €{revenue_delta4}{revenue_plug}|   {shareholders4}  {shareholder_delta4}    \n\
+Expenses:  €{expenses4} €{expense_delta4}{expense_plug}|   {customers4}  {customer_delta4}    \n\
+Profits:   €{profits4} €{profit_delta4}{profit_plug}|   {employees4}  {employee_delta4}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta4 + customer_delta4 + employee_delta4)}\n"
         clear()
@@ -529,14 +568,17 @@ Profits:   €{profits4} €{profit_delta4}  |   {employees4}  {employee_delta4}
         customers4 = "Customers:         " + emoji_assignment(customer_delta4)
         employee_delta4 = employee_delta3 - 1
         employees4 = "Employees:         " + emoji_assignment(employee_delta4)
+        revenue_plug = formatting_plug(revenue4, revenue_delta4) 
+        expense_plug = formatting_plug(expenses4, expense_delta4) 
+        profit_plug = formatting_plug(profits4, profit_delta4)
         
 
         dashboard_4 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue4} €{revenue_delta4} |   {shareholders4}  {shareholder_delta4}    \n\
-Expenses:  €{expenses4} €{expense_delta4}   |   {customers4}  {customer_delta4}    \n\
-Profits:   €{profits4} €{profit_delta4}  |   {employees4}  {employee_delta4}    \n\
+Revenue:   €{revenue4} €{revenue_delta4}{revenue_plug}|   {shareholders4}  {shareholder_delta4}    \n\
+Expenses:  €{expenses4} €{expense_delta4}{expense_plug}|   {customers4}  {customer_delta4}    \n\
+Profits:   €{profits4} €{profit_delta4}{profit_plug}|   {employees4}  {employee_delta4}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta4 + customer_delta4 + employee_delta4)}\n"
         clear()
@@ -591,20 +633,25 @@ def question_5(revenue4, revenue_delta4, expenses4, expense_delta4, profits4, pr
         customers5 = "Customers:         " + emoji_assignment(customer_delta5)
         employee_delta5 = employee_delta4 + 1
         employees5 = "Employees:         " + emoji_assignment(employee_delta5)
+        revenue_plug = formatting_plug(revenue5, revenue_delta5) 
+        expense_plug = formatting_plug(expenses5, expense_delta5) 
+        profit_plug = formatting_plug(profits5, profit_delta5)
         
 
         dashboard_5 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue5} €{revenue_delta5} |   {shareholders5}  {shareholder_delta5}    \n\
-Expenses:  €{expenses5} €{expense_delta5}   |   {customers5}  {customer_delta5}    \n\
-Profits:   €{profits5} €{profit_delta5}  |   {employees5}  {employee_delta5}    \n\
+Revenue:   €{revenue5} €{revenue_delta5}{revenue_plug}|   {shareholders5}  {shareholder_delta5}    \n\
+Expenses:  €{expenses5} €{expense_delta5}{expense_plug}|   {customers5}  {customer_delta5}    \n\
+Profits:   €{profits5} €{profit_delta5}{profit_plug}|   {employees5}  {employee_delta5}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta5 + customer_delta5 + employee_delta5)}\n"
         clear()
         print(scenario_5_answer_1)
         print(dashboard_5)
-        input("\nPress Enter To Proceed to Next Scenario")
+        input("\nPress Enter To Finish Game")
+        clear()
+        choice = input(f"You have scored {conclude_game(shareholder_delta5, customer_delta5, employee_delta5)} points - press E to exit or press any key followed by enter to play again")
     
     elif input1 == "B":
         revenue_delta5 = 0
@@ -619,20 +666,25 @@ Profits:   €{profits5} €{profit_delta5}  |   {employees5}  {employee_delta5}
         customers5 = "Customers:         " + emoji_assignment(customer_delta5)
         employee_delta5 = employee_delta4 + 0
         employees5 = "Employees:         " + emoji_assignment(employee_delta5)
+        revenue_plug = formatting_plug(revenue5, revenue_delta5) 
+        expense_plug = formatting_plug(expenses5, expense_delta5) 
+        profit_plug = formatting_plug(profits5, profit_delta5)
         
 
         dashboard_5 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue5} €{revenue_delta5} |   {shareholders5}  {shareholder_delta5}    \n\
-Expenses:  €{expenses5} €{expense_delta5}   |   {customers5}  {customer_delta5}    \n\
-Profits:   €{profits5} €{profit_delta5}  |   {employees5}  {employee_delta5}    \n\
+Revenue:   €{revenue5} €{revenue_delta5}{revenue_plug}|   {shareholders5}  {shareholder_delta5}    \n\
+Expenses:  €{expenses5} €{expense_delta5}{expense_plug}|   {customers5}  {customer_delta5}    \n\
+Profits:   €{profits5} €{profit_delta5}{profit_plug}|   {employees5}  {employee_delta5}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta5 + customer_delta5 + employee_delta5)}\n"
         clear()
         print(scenario_5_answer_2)
         print(dashboard_5)
-        input("\nPress Enter To Proceed to Next Scenario")
+        input("\nPress Enter To Finish Game")
+        clear()
+        choice = input(f"You have scored {conclude_game(shareholder_delta5, customer_delta5, employee_delta5)} points - press E to exit or press any key followed by enter to play again")
 
     elif input1 == "C":
         revenue_delta5 = 0
@@ -647,20 +699,25 @@ Profits:   €{profits5} €{profit_delta5}  |   {employees5}  {employee_delta5}
         customers5 = "Customers:         " + emoji_assignment(customer_delta5)
         employee_delta5 = employee_delta4 + 1
         employees5 = "Employees:         " + emoji_assignment(employee_delta5)
+        revenue_plug = formatting_plug(revenue5, revenue_delta5) 
+        expense_plug = formatting_plug(expenses5, expense_delta5) 
+        profit_plug = formatting_plug(profits5, profit_delta5)
         
 
         dashboard_5 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue5} €{revenue_delta5} |   {shareholders5}  {shareholder_delta5}    \n\
-Expenses:  €{expenses5} €{expense_delta5}   |   {customers5}  {customer_delta5}    \n\
-Profits:   €{profits5} €{profit_delta5}  |   {employees5}  {employee_delta5}    \n\
+Revenue:   €{revenue5} €{revenue_delta5}{revenue_plug}|   {shareholders5}  {shareholder_delta5}    \n\
+Expenses:  €{expenses5} €{expense_delta5}{expense_plug}|   {customers5}  {customer_delta5}    \n\
+Profits:   €{profits5} €{profit_delta5}{profit_plug}|   {employees5}  {employee_delta5}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta5 + customer_delta5 + employee_delta5)}\n"
         clear()
         print(scenario_5_answer_3)
         print(dashboard_5)
-        input("\nPress Enter To Proceed to Next Scenario")
+        input("\nPress Enter To Finish Game")
+        clear()
+        choice = input(f"You have scored {conclude_game(shareholder_delta5, customer_delta5, employee_delta5)} points - press E to exit or press any key followed by enter to play again")
     
     return revenue5, revenue_delta5, expenses5, expense_delta5, profits5, profit_delta5, shareholders5, shareholder_delta5, customers5, customer_delta5, employees5, employee_delta5, dashboard_5
 
