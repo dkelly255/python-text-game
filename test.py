@@ -20,7 +20,7 @@ def clear():
 
 def emoji_assignment(delta):
     """
-    Assigns emoji to dashboard categories based on stakehodler sentiment score
+    Assigns emoji to dashboard categories based on stakeholder sentiment score
     """
     if delta >= 2:
         emoji = "😀"
@@ -35,6 +35,13 @@ def emoji_assignment(delta):
 
     return emoji
 
+def formatting_plug(a,b):
+    """
+    Plug spaces to visually align dashboard segregation on terminal display depending on length of variables
+    """
+    plug = (len(str(a)) + len(str(b))) * "-"
+    return plug
+
 revenue = 1000000
 revenue_delta = "     "
 expenses = 700000
@@ -48,6 +55,8 @@ customer_delta = "  "
 employees = "Employees:         😐"
 employee_delta = "  "
 
+plug = formatting_plug(revenue, revenue_delta)
+print(plug)
 
 dashboard_0 = f"\n------------------------------------------------------------\n\
 Financial Projections:         |     Stakeholder Sentiment :  \n\
