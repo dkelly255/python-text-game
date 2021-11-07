@@ -18,6 +18,23 @@ def clear():
     else:
         _ = system('clear')
 
+def emoji_assignment(delta):
+    """
+    Assigns emoji to dashboard categories based on stakehodler sentiment score
+    """
+    if delta >= 2:
+        emoji = "😀"
+    elif delta == 1:
+        emoji = "🙂"
+    elif delta == 0:
+        emoji = "😐"
+    elif delta == -1:
+        emoji = "🙁"
+    elif delta <= -2:
+        emoji = "😠"
+
+    return emoji
+
 revenue = 1000000
 revenue_delta = "     "
 expenses = 700000
@@ -82,13 +99,13 @@ def question_1(revenue, revenue_delta, expenses, expense_delta, profits, profit_
         except TypeError:
             expenses1 = expenses 
         profit_delta1 = revenue_delta1 - expense_delta1
-        profits1 = revenue1 - expenses1
-        shareholders1 = "Shareholders:      🙁"
+        profits1 = revenue1 - expenses1        
         shareholder_delta1 = -1
-        customers1 = "Customers:         😐"
+        shareholders1 = "Shareholders:      " + emoji_assignment(shareholder_delta1)
         customer_delta1 = 0
-        employees1 = "Employees:         😐"
+        customers1 = "Customers:         " + emoji_assignment(customer_delta1)
         employee_delta1 = 0
+        employees1 = "Employees:         " + emoji_assignment(employee_delta1)        
 
         dashboard_1 = f"\n------------------------------------------------------------\n\
 Financial Projections:     |    Stakeholder Sentiment :  \n\
@@ -113,12 +130,12 @@ Profits:   €{profits1} €{profit_delta1}  |   {employees1}  {employee_delta1}
             expenses1 = expenses 
         profit_delta1 = revenue_delta1 - expense_delta1
         profits1 = revenue1 - expenses1
-        shareholders1 = "Shareholders:      😐"
         shareholder_delta1 = 0
-        customers1 = "Customers:         😐"
+        shareholders1 = "Shareholders:      " + emoji_assignment(shareholder_delta1)
         customer_delta1 = 0
-        employees1 = "Employees:         😐"
+        customers1 = "Customers:         " + emoji_assignment(customer_delta1)
         employee_delta1 = 0
+        employees1 = "Employees:         " + emoji_assignment(employee_delta1)
 
         dashboard_1 = f"\n------------------------------------------------------------\n\
 Financial Projections:     |    Stakeholder Sentiment :  \n\
@@ -143,12 +160,12 @@ Profits:   €{profits1} €{profit_delta1}      |    {employees1} {employee_del
             expenses1 = expenses 
         profit_delta1 = revenue_delta1 - expense_delta1
         profits1 = revenue1 - expenses1
-        shareholders1 = "Shareholders:      🙂"
         shareholder_delta1 = 1
-        customers1 = "Customers:         😐"
+        shareholders1 = "Shareholders:      " + emoji_assignment(shareholder_delta1)
         customer_delta1 = 0
-        employees1 = "Employees:         😐"
+        customers1 = "Customers:         " + emoji_assignment(customer_delta1)
         employee_delta1 = 0
+        employees1 = "Employees:         " + emoji_assignment(employee_delta1)
 
         dashboard_1 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
@@ -207,12 +224,13 @@ def question_2(revenue1, revenue_delta1, expenses1, expense_delta1, profits1, pr
         expenses2 = expenses1 + expense_delta2
         profit_delta2 = revenue_delta2 - expense_delta2
         profits2 = revenue2 - expenses2
-        shareholders2 = "Shareholders:      😀"
         shareholder_delta2 = shareholder_delta1 + 1
-        customers2 = "Customers:         🙂"
+        shareholders2 = "Shareholders:      " + emoji_assignment(shareholder_delta2)
         customer_delta2 = customer_delta1 + 1
-        employees2 = "Employees:         😐"
+        customers2 = "Customers:         " + emoji_assignment(customer_delta2)
         employee_delta2 = 0
+        employees2 = "Employees:         " + emoji_assignment(employee_delta2)
+        
 
         dashboard_2 = f"\n------------------------------------------------------------\n\
 Financial Projections:      |    Stakeholder Sentiment :  \n\
@@ -234,12 +252,12 @@ Profits:   €{profits2} €{profit_delta2}  |   {employees2}  {employee_delta2}
         expenses2 = expenses1 + expense_delta2
         profit_delta2 = revenue_delta2 - expense_delta2
         profits2 = revenue2 - expenses2
-        shareholders2 = shareholders1
         shareholder_delta2 = shareholder_delta1 + 0
-        customers2 = customers1
+        shareholders2 = shareholders1
         customer_delta2 = customer_delta1 + 0
-        employees2 = employees1
+        customers2 = customers1
         employee_delta2 = 0
+        employees2 = employees1        
 
         dashboard_2 = f"\n------------------------------------------------------------\n\
 Financial Projections:   |    Stakeholder Sentiment :  \n\
@@ -261,19 +279,19 @@ Profits:   €{profits2} €{profit_delta2}  |   {employees2}  {employee_delta2}
         expenses2 = expenses1 + expense_delta2
         profit_delta2 = revenue_delta2 - expense_delta2
         profits2 = revenue2 - expenses2
-        shareholders2 = shareholders1
         shareholder_delta2 = shareholder_delta1 - 1
-        customers2 = customers1
+        shareholders2 = "Shareholders:      " + emoji_assignment(shareholder_delta2)
         customer_delta2 = customer_delta1 - 1
-        employees2 = employees1
+        customers2 = "Customers:         " + emoji_assignment(customer_delta2)
         employee_delta2 = 0
+        employees2 = "Employees:         " + emoji_assignment(employee_delta2)        
 
         dashboard_2 = f"\n------------------------------------------------------------\n\
-Financial Projections:   |    Stakeholder Sentiment :  \n\
+Financial Projections:     |    Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
-Revenue:   €{revenue2} €{revenue_delta2}  |   {shareholders2}  {shareholder_delta2}    \n\
+Revenue:   €{revenue2} €{revenue_delta2} |   {shareholders2}  {shareholder_delta2}    \n\
 Expenses:  €{expenses2} €{expense_delta2}  |   {customers2}  {customer_delta2}    \n\
-Profits:   €{profits2} €{profit_delta2}  |   {employees2}  {employee_delta2}    \n\
+Profits:   €{profits2} €{profit_delta2}     |   {employees2}  {employee_delta2}    \n\
 ------------------------------------------------------------\n\
                                             Total Points: {(shareholder_delta2 + customer_delta2 + employee_delta2)}\n"
         clear()
@@ -284,3 +302,6 @@ Profits:   €{profits2} €{profit_delta2}  |   {employees2}  {employee_delta2}
     return revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2
 
 revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2 = question_2(revenue1, revenue_delta1, expenses1, expense_delta1, profits1, profit_delta1, shareholders1, shareholder_delta1, customers1, customer_delta1, employees1, employee_delta1, dashboard_1)
+
+
+
