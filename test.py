@@ -79,6 +79,15 @@ def main_menu():
     input()
     clear()
 
+def typewriter(text, delay):
+    for letter in text:
+        sleep(delay) 
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+
+
+
+
 
 revenue = 1000000
 revenue_delta = "     "
@@ -101,8 +110,20 @@ Expenses:  €{expenses} {expense_delta}       |      {customers} {customer_delt
 Profits:   €{profits} {profit_delta}       |      {employees} {employee_delta}    \n\
 ------------------------------------------------------------\n"
 
+intro = f"- The Year is 2021...\n- FictionalCorp have hired you as their new CEO\
+\n- You have been tasked with improving their performance on three fronts:\n\
+    \n1. Shareholder Sentiment\
+    \n2. Customer Confidence\
+    \n3. Employee Engagement\n\
+    \n- You will receive one point for each improvement in stakeholder status\
+    \n- You will lose one point for each decline in stakeholder status\n\
+    \n- Navigate the following series of business decisions, and their respective\
+    \nstakeholder impacts\n\
+    \n- Your performance will be displayed on a dashboard in the format below:\n" 
+
 main_menu()
-print(dashboard_0)
+typewriter(intro, 0.015)
+typewriter(dashboard_0, 0.01)
 input("\n[Press Enter To Begin]")
 
 
