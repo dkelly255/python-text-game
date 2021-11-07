@@ -303,5 +303,122 @@ Profits:   €{profits2} €{profit_delta2}     |   {employees2}  {employee_delt
 
 revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2 = question_2(revenue1, revenue_delta1, expenses1, expense_delta1, profits1, profit_delta1, shareholders1, shareholder_delta1, customers1, customer_delta1, employees1, employee_delta1, dashboard_1)
 
+def question_3(revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2):
+    
+    clear()
+    print(dashboard_2)
+    scenario_3 = "\nScenario 3: You must Choose the new material supplier rate \n\
+    for the coming year:\n\
+    \n    A. Premium rate - Increase Expenditure \n\
+    B. Maintain Rate - Maintain Expenditure \n\
+    C. Low Cost Rate - Decrease Expenditure \n"
+    print(scenario_3)
+    while True:
+        input1 = input("\nPlease Select an option - A, B or C: ").upper()
+        if input1.upper() not in ('A', 'B', 'C'):
+            print("Please Enter A Valid Choice - A, B or C")
+        else:
+            break
+    scenario_3_answer_1 = "\nYou have chosen Option A\n \n- Increasing the Material Supplier rate by ~5% has resulted in an increase in material\n\
+    quality, without increasing units sold\n\
+    - Yearly Revenue projections are unchanged, whilst expense projections have slightly increased\n\
+    - Profit projections have slightly decreased for the year as a result\n"
+    scenario_3_answer_2 = "\nYou have chosen Option B\n \n- Retaining current material supply rates has resulted in flat projected\n\
+    unit costs and unit sales\n\
+    - Yearly Revenue projections remain unchanged as a result\n\
+    - With expenditure forecasts unchanged, Profit projections remained static\n"
+    scenario_3_answer_3 = "\nYou have chosen Option C\n \n- Decreasing the material supply rate by ~5% has resulted in an decrease in projected\n\
+    unit costs\n\
+    - Yearly Revenue projections are unchanged, however cost projections have decreased\n\
+    - Profit projections for the year have improved as a result\n"
+
+    
+    if input1 == "A":        
+        revenue_delta3 = 0
+        revenue3 = revenue2 + revenue_delta2
+        expense_delta3 = 50000
+        expenses3 = expenses2 + expense_delta3
+        profit_delta3 = revenue_delta3 - expense_delta3
+        profits3 = revenue3 - expenses3
+        shareholder_delta3 = shareholder_delta2 + 0
+        shareholders3 = "Shareholders:      " + emoji_assignment(shareholder_delta3)
+        customer_delta3 = customer_delta2 + 1
+        customers3 = "Customers:         " + emoji_assignment(customer_delta3)
+        employee_delta3 = employee_delta2 + 1
+        employees3 = "Employees:         " + emoji_assignment(employee_delta3)
+        
+
+        dashboard_3 = f"\n------------------------------------------------------------\n\
+Financial Projections:      |    Stakeholder Sentiment :  \n\
+------------------------------------------------------------\n\
+Revenue:   €{revenue3} €{revenue_delta3} |   {shareholders3}  {shareholder_delta3}    \n\
+Expenses:  €{expenses3} €{expense_delta3}   |   {customers3}  {customer_delta3}    \n\
+Profits:   €{profits3} €{profit_delta3}  |   {employees3}  {employee_delta3}    \n\
+------------------------------------------------------------\n\
+                                            Total Points: {(shareholder_delta3 + customer_delta3 + employee_delta3)}\n"
+        clear()
+        print(scenario_3_answer_1)
+        print(dashboard_3)
+        input("\nPress Enter To Proceed to Next Scenario")
+    
+    elif input1 == "B":
+        revenue_delta3 = 0
+        revenue3 = revenue2 + revenue_delta2
+        expense_delta3 = 0
+        expenses3 = expenses2 + expense_delta3
+        profit_delta3 = revenue_delta3 - expense_delta3
+        profits3 = revenue3 - expenses3
+        shareholder_delta3 = shareholder_delta2 + 0
+        shareholders3 = "Shareholders:      " + emoji_assignment(shareholder_delta3)
+        customer_delta3 = customer_delta2 + 0
+        customers3 = "Customers:         " + emoji_assignment(customer_delta3)
+        employee_delta3 = employee_delta2 + 0
+        employees3 = "Employees:         " + emoji_assignment(employee_delta3)
+        
+
+        dashboard_3 = f"\n------------------------------------------------------------\n\
+Financial Projections:      |    Stakeholder Sentiment :  \n\
+------------------------------------------------------------\n\
+Revenue:   €{revenue3} €{revenue_delta3} |   {shareholders3}  {shareholder_delta3}    \n\
+Expenses:  €{expenses3} €{expense_delta3}   |   {customers3}  {customer_delta3}    \n\
+Profits:   €{profits3} €{profit_delta3}  |   {employees3}  {employee_delta3}    \n\
+------------------------------------------------------------\n\
+                                            Total Points: {(shareholder_delta3 + customer_delta3 + employee_delta3)}\n"
+        clear()
+        print(scenario_3_answer_2)
+        print(dashboard_3)
+        input("\nPress Enter To Proceed to Next Scenario")
+
+    elif input1 == "C":
+        revenue_delta3 = 0
+        revenue3 = revenue2 + revenue_delta2
+        expense_delta3 = -50000
+        expenses3 = expenses2 + expense_delta3
+        profit_delta3 = revenue_delta3 - expense_delta3
+        profits3 = revenue3 - expenses3
+        shareholder_delta3 = shareholder_delta2 + 1
+        shareholders3 = "Shareholders:      " + emoji_assignment(shareholder_delta3)
+        customer_delta3 = customer_delta2 + -1
+        customers3 = "Customers:         " + emoji_assignment(customer_delta3)
+        employee_delta3 = employee_delta2 + 0
+        employees3 = "Employees:         " + emoji_assignment(employee_delta3)
+        
+
+        dashboard_3 = f"\n------------------------------------------------------------\n\
+Financial Projections:      |    Stakeholder Sentiment :  \n\
+------------------------------------------------------------\n\
+Revenue:   €{revenue3} €{revenue_delta3} |   {shareholders3}  {shareholder_delta3}    \n\
+Expenses:  €{expenses3} €{expense_delta3}   |   {customers3}  {customer_delta3}    \n\
+Profits:   €{profits3} €{profit_delta3}  |   {employees3}  {employee_delta3}    \n\
+------------------------------------------------------------\n\
+                                            Total Points: {(shareholder_delta3 + customer_delta3 + employee_delta3)}\n"
+        clear()
+        print(scenario_3_answer_3)
+        print(dashboard_3)
+        input("\nPress Enter To Proceed to Next Scenario")
+    
+    return revenue3, revenue_delta3, expenses3, expense_delta3, profits3, profit_delta3, shareholders3, shareholder_delta3, customers3, customer_delta3, employees3, employee_delta3, dashboard_3
+
+revenue3, revenue_delta3, expenses3, expense_delta3, profits3, profit_delta3, shareholders3, shareholder_delta3, customers3, customer_delta3, employees3, employee_delta3, dashboard_3 = question_3(revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2)
 
 
