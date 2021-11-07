@@ -126,6 +126,14 @@ Profits:   €{profits1} {profit_delta}       |      {employees} {employee_delta
     return revenue1, expenses1, profits1, shareholders, customers, employees, dashboard_0
 
 
-question_1(revenue, revenue_delta, expenses, expense_delta, profits, profit_delta, shareholders, shareholder_delta, customers, customer_delta, employees, employee_delta, dashboard_0)
+# question_1(revenue, revenue_delta, expenses, expense_delta, profits, profit_delta, shareholders, shareholder_delta, customers, customer_delta, employees, employee_delta, dashboard_0)
+
+revenue1, expenses1, profits1, shareholders, customers, employees, dashboard_0 = question_1(revenue, revenue_delta, expenses, expense_delta, profits, profit_delta, shareholders, shareholder_delta, customers, customer_delta, employees, employee_delta, dashboard_0)
 
 print(revenue1)
+print(expenses1)
+print(profits1)
+print(shareholders)
+print(customers)
+print(employees)
+print(dashboard_0)
