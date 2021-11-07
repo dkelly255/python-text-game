@@ -18,6 +18,7 @@ def clear():
     else:
         _ = system('clear')
 
+
 def emoji_assignment(delta):
     """
     Assigns emoji to dashboard categories based on stakeholder sentiment score
@@ -35,6 +36,7 @@ def emoji_assignment(delta):
 
     return emoji
 
+
 def formatting_plug(a,b):
     """
     Plug spaces to visually align dashboard segregation on terminal display depending on length of variables
@@ -42,11 +44,40 @@ def formatting_plug(a,b):
     plug = (14 - (len(str(a)) + len(str(b)))) * " "
     return plug
 
-def conclude_game(a,b,c):
+
+def final_score(a,b,c):
+    """
+    Calculates player's total score upon conclusion of the final answer
+    """
     total_points = a + b + c
     return total_points
-    
-    
+
+def main_menu():
+    print("\n----------------------------------------------------------------------")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                   W E L C O M E                                    |")
+    print("|                                                                    |")
+    print("|                       T O                                          |")
+    print("|                                                                    |")
+    print("|                         P Y T H O N                                |")
+    print("|                                                                    |")
+    print("|                            T E X T                                 |")
+    print("|                                                                    |")
+    print("|                               A D V E N T U R E                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                     [ PRESS ENTER TO BEGIN ]                       |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("----------------------------------------------------------------------")
+    input()
+    clear()
 
 
 revenue = 1000000
@@ -62,7 +93,6 @@ customer_delta = "  "
 employees = "Employees:         😐"
 employee_delta = "  "
 
-
 dashboard_0 = f"\n------------------------------------------------------------\n\
 Financial Projections:         |     Stakeholder Sentiment :  \n\
 ------------------------------------------------------------\n\
@@ -71,9 +101,10 @@ Expenses:  €{expenses} {expense_delta}       |      {customers} {customer_delt
 Profits:   €{profits} {profit_delta}       |      {employees} {employee_delta}    \n\
 ------------------------------------------------------------\n"
 
+main_menu()
 print(dashboard_0)
-
 input("\n[Press Enter To Begin]")
+
 
 def question_1(revenue, revenue_delta, expenses, expense_delta, profits, profit_delta, shareholders, shareholder_delta, customers, customer_delta, employees, employee_delta, dashboard_0):
     
@@ -205,7 +236,7 @@ Profits:   €{profits1} €{profit_delta1}{profit_plug}|   {employees1}  {emplo
     
     return revenue1, revenue_delta1, expenses1, expense_delta1, profits1, profit_delta1, shareholders1, shareholder_delta1, customers1, customer_delta1, employees1, employee_delta1, dashboard_1
 
-revenue1, revenue_delta1, expenses1, expense_delta1, profits1, profit_delta1, shareholders1, shareholder_delta1, customers1, customer_delta1, employees1, employee_delta1, dashboard_1 = question_1(revenue, revenue_delta, expenses, expense_delta, profits, profit_delta, shareholders, shareholder_delta, customers, customer_delta, employees, employee_delta, dashboard_0)
+
 
 # print(revenue1, revenue_delta1, expenses1, expense_delta1, profits1, profit_delta1, shareholders1, shareholder_delta1, customers1, customer_delta1, employees1, employee_delta1)
 # print(dashboard_1)
@@ -334,7 +365,6 @@ Profits:   €{profits2} €{profit_delta2}{profit_plug}|   {employees2}  {emplo
     
     return revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2
 
-revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2 = question_2(revenue1, revenue_delta1, expenses1, expense_delta1, profits1, profit_delta1, shareholders1, shareholder_delta1, customers1, customer_delta1, employees1, employee_delta1, dashboard_1)
 
 def question_3(revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2):
     
@@ -461,7 +491,7 @@ Profits:   €{profits3} €{profit_delta3}{profit_plug}|   {employees3}  {emplo
     
     return revenue3, revenue_delta3, expenses3, expense_delta3, profits3, profit_delta3, shareholders3, shareholder_delta3, customers3, customer_delta3, employees3, employee_delta3, dashboard_3
 
-revenue3, revenue_delta3, expenses3, expense_delta3, profits3, profit_delta3, shareholders3, shareholder_delta3, customers3, customer_delta3, employees3, employee_delta3, dashboard_3 = question_3(revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2)
+
 
 def question_4(revenue3, revenue_delta3, expenses3, expense_delta3, profits3, profit_delta3, shareholders3, shareholder_delta3, customers3, customer_delta3, employees3, employee_delta3, dashboard_3):
     
@@ -588,7 +618,7 @@ Profits:   €{profits4} €{profit_delta4}{profit_plug}|   {employees4}  {emplo
     
     return revenue4, revenue_delta4, expenses4, expense_delta4, profits4, profit_delta4, shareholders4, shareholder_delta4, customers4, customer_delta4, employees4, employee_delta4, dashboard_4
 
-revenue4, revenue_delta4, expenses4, expense_delta4, profits4, profit_delta4, shareholders4, shareholder_delta4, customers4, customer_delta4, employees4, employee_delta4, dashboard_4 = question_4(revenue3, revenue_delta3, expenses3, expense_delta3, profits3, profit_delta3, shareholders3, shareholder_delta3, customers3, customer_delta3, employees3, employee_delta3, dashboard_3)
+
 
 def question_5(revenue4, revenue_delta4, expenses4, expense_delta4, profits4, profit_delta4, shareholders4, shareholder_delta4, customers4, customer_delta4, employees4, employee_delta4, dashboard_4):
     
@@ -649,9 +679,8 @@ Profits:   €{profits5} €{profit_delta5}{profit_plug}|   {employees5}  {emplo
         clear()
         print(scenario_5_answer_1)
         print(dashboard_5)
-        input("\nPress Enter To Finish Game")
-        clear()
-        choice = input(f"You have scored {conclude_game(shareholder_delta5, customer_delta5, employee_delta5)} points - press E to exit or press any key followed by enter to play again")
+        input(f"\n This completes the final scenario - you have scored {final_score(shareholder_delta5, customer_delta5, employee_delta5)} Please Press Enter")
+        
     
     elif input1 == "B":
         revenue_delta5 = 0
@@ -682,9 +711,8 @@ Profits:   €{profits5} €{profit_delta5}{profit_plug}|   {employees5}  {emplo
         clear()
         print(scenario_5_answer_2)
         print(dashboard_5)
-        input("\nPress Enter To Finish Game")
-        clear()
-        choice = input(f"You have scored {conclude_game(shareholder_delta5, customer_delta5, employee_delta5)} points - press E to exit or press any key followed by enter to play again")
+        input(f"\n This completes the final scenario - you have scored {final_score(shareholder_delta5, customer_delta5, employee_delta5)} Please Press Enter")
+        
 
     elif input1 == "C":
         revenue_delta5 = 0
@@ -715,10 +743,40 @@ Profits:   €{profits5} €{profit_delta5}{profit_plug}|   {employees5}  {emplo
         clear()
         print(scenario_5_answer_3)
         print(dashboard_5)
-        input("\nPress Enter To Finish Game")
-        clear()
-        choice = input(f"You have scored {conclude_game(shareholder_delta5, customer_delta5, employee_delta5)} points - press E to exit or press any key followed by enter to play again")
+        input(f"\n This completes the final scenario - you have scored {final_score(shareholder_delta5, customer_delta5, employee_delta5)} Please Press Enter")        
     
     return revenue5, revenue_delta5, expenses5, expense_delta5, profits5, profit_delta5, shareholders5, shareholder_delta5, customers5, customer_delta5, employees5, employee_delta5, dashboard_5
 
-revenue5, revenue_delta5, expenses5, expense_delta5, profits5, profit_delta5, shareholders5, shareholder_delta5, customers5, customer_delta5, employees5, employee_delta5, dashboard_5 = question_5(revenue4, revenue_delta4, expenses4, expense_delta4, profits4, profit_delta4, shareholders4, shareholder_delta4, customers4, customer_delta4, employees4, employee_delta4, dashboard_4)
+
+
+def main():
+    """
+    Main function containing questions for game execution
+    """
+    revenue1, revenue_delta1, expenses1, expense_delta1, profits1, profit_delta1, shareholders1, shareholder_delta1, customers1, customer_delta1, employees1, employee_delta1, dashboard_1 = question_1(revenue, revenue_delta, expenses, expense_delta, profits, profit_delta, shareholders, shareholder_delta, customers, customer_delta, employees, employee_delta, dashboard_0)
+    revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2 = question_2(revenue1, revenue_delta1, expenses1, expense_delta1, profits1, profit_delta1, shareholders1, shareholder_delta1, customers1, customer_delta1, employees1, employee_delta1, dashboard_1)
+    revenue3, revenue_delta3, expenses3, expense_delta3, profits3, profit_delta3, shareholders3, shareholder_delta3, customers3, customer_delta3, employees3, employee_delta3, dashboard_3 = question_3(revenue2, revenue_delta2, expenses2, expense_delta2, profits2, profit_delta2, shareholders2, shareholder_delta2, customers2, customer_delta2, employees2, employee_delta2, dashboard_2)
+    revenue4, revenue_delta4, expenses4, expense_delta4, profits4, profit_delta4, shareholders4, shareholder_delta4, customers4, customer_delta4, employees4, employee_delta4, dashboard_4 = question_4(revenue3, revenue_delta3, expenses3, expense_delta3, profits3, profit_delta3, shareholders3, shareholder_delta3, customers3, customer_delta3, employees3, employee_delta3, dashboard_3)
+    revenue5, revenue_delta5, expenses5, expense_delta5, profits5, profit_delta5, shareholders5, shareholder_delta5, customers5, customer_delta5, employees5, employee_delta5, dashboard_5 = question_5(revenue4, revenue_delta4, expenses4, expense_delta4, profits4, profit_delta4, shareholders4, shareholder_delta4, customers4, customer_delta4, employees4, employee_delta4, dashboard_4)
+    return shareholder_delta5, customer_delta5, employee_delta5
+
+
+shareholder_delta5, customer_delta5, employee_delta5 = main()
+
+
+def finish_game():
+    """
+    Closing game loop triggered post completion of final question
+    """
+    loop = True
+    while loop:
+        clear()
+        choice = input(f"Press E to exit or if you would like to try to improve your score, press any key followed by enter to play again:")
+        if choice.upper() == "E":
+            print("Goodbye")
+            loop = False
+        else:
+            shareholder_delta5, customer_delta5, employee_delta5 = main()
+
+
+finish_game()

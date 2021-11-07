@@ -18,32 +18,34 @@ def clear():
     else:
         _ = system('clear')
 
-print("\n----------------------------------------------------------------------")
-print("|                                                                    |")
-print("|                                                                    |")
-print("|                                                                    |")
-print("|                   W E L C O M E                                    |")
-print("|                                                                    |")
-print("|                       T O                                          |")
-print("|                                                                    |")
-print("|                         P Y T H O N                                |")
-print("|                                                                    |")
-print("|                            T E X T                                 |")
-print("|                                                                    |")
-print("|                               A D V E N T U R E                    |")
-print("|                                                                    |")
-print("|                                                                    |")
-print("|                                                                    |")
-print("|                                                                    |")
-print("|                     [ PRESS ENTER TO BEGIN ]                       |")
-print("|                                                                    |")
-print("|                                                                    |")
-print("|                                                                    |")
-print("|                                                                    |")
-print("----------------------------------------------------------------------")
-input()
-clear()
+def main_menu():
+    print("\n----------------------------------------------------------------------")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                   W E L C O M E                                    |")
+    print("|                                                                    |")
+    print("|                       T O                                          |")
+    print("|                                                                    |")
+    print("|                         P Y T H O N                                |")
+    print("|                                                                    |")
+    print("|                            T E X T                                 |")
+    print("|                                                                    |")
+    print("|                               A D V E N T U R E                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                     [ PRESS ENTER TO BEGIN ]                       |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("|                                                                    |")
+    print("----------------------------------------------------------------------")
+    input()
+    clear()
 
+main_menu()
 
 intro = f"- The Year is 2021...\n- FictionalCorp have hired you as their new CEO\
 \n- You have been tasked with improving their performance on three fronts:\n\
@@ -55,6 +57,8 @@ intro = f"- The Year is 2021...\n- FictionalCorp have hired you as their new CEO
     \n- Navigate the following series of business decisions, and their respective\
     \nstakeholder impacts\n\
     \n- Your performance will be displayed on a dashboard in the format below:\n" 
+
+
 
 revenue = 1000000
 expenses = 700000
